@@ -17,7 +17,7 @@ const (
 
 func main() {
 	if len(os.Args) < 2 {
-		log.Fatal("Usage: go run main.go run <command> [args..]")
+		log.Fatal("Usage: go run main.go run [bash cmd]")
 	}
 
 	switch os.Args[1] {

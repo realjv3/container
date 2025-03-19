@@ -3,4 +3,4 @@
 
 #### To build and run:
 1. run `go build .`
-2. to run is similar to the `docker run` command - `./container run <command> [...options]`, e.g. `./container run sh`;
+2. to run is similar to the `docker run` command: `./container <command> [bash cmd]`, e.g. `./container run sh`;
