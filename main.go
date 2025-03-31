@@ -1,3 +1,5 @@
+//go:build linux
+
 package main
 
 import (
@@ -17,7 +19,7 @@ const (
 
 func main() {
 	if len(os.Args) < 2 {
-		log.Fatal("Usage: go run main.go run [bash cmd]")
+		log.Fatal("Usage: ./container run [bash cmd]")
 	}
 
 	switch os.Args[1] {
@@ -100,6 +102,7 @@ func initCGroups() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 	// move the existing process ID into container's control group process list
 	err = os.WriteFile(filepath.Join(cGroups, cName, "/cgroup.procs"), []byte(strconv.Itoa(os.Getppid())), 0700)
 	if err != nil {
